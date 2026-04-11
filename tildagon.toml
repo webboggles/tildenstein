@@ -1,0 +1,13 @@
+[app]
+name = "TILDENSTEIN 3D"
+category = "Games"
+
+[entry]
+class = "TildensteinApp"
+
+[metadata]
+author = "webboggles"
+license = "CC-BY-NC-4.0"
+url = "https://github.com/webboggles/tildenstein"
+description = "Wolfenstein-style raycasting FPS with ESP-NOW multiplayer. Hunt spiders across the EMF Camp grounds."
+version = "1.0.0"
