@@ -15,7 +15,7 @@ Wolfenstein-style raycasting FPS for the [Tildagon badge](https://tildagon.badge
 
 | Button | Action |
 |--------|--------|
-| Joystick | Move &amp; strafe |
+| IMU (tilt) | Move &amp; strafe |
 | B (Right) | Shoot |
 | F (Cancel) | Jump |
 | A (Confirm) | Menu select |
