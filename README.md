@@ -1,6 +1,6 @@
 # TILDENSTEIN 3D
 
-Wolfenstein-style raycasting FPS for the [Tildagon badge](https://tildagon.badge.emfcamp.org/) at EMF Camp.
+Raycasting 3D FPS for the [Tildagon badge](https://tildagon.badge.emfcamp.org/) at EMF Camp.
 
 ## Features
 
