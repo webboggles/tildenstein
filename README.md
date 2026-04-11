@@ -2,6 +2,8 @@
 
 Raycasting 3D FPS for the [Tildagon badge](https://tildagon.badge.emfcamp.org/) at EMF Camp.
 
+![Gameplay](screenshot.png)
+
 ## Features
 
 - Raycasting 3D engine with textured walls, tents &amp; marquees
