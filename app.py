@@ -41,7 +41,7 @@ except ImportError:
 try:
     from tildagonos import tildagonos
     from system.eventbus import eventbus
-    from system.patterndisplay.events import PatternDisable
+    from system.patterndisplay.events import PatternDisable, PatternEnable
     _HAS_LEDS = True
 except ImportError:
     _HAS_LEDS = False
@@ -148,6 +148,7 @@ class TildensteinApp(app.App):
         self.title_pulse += delta * 0.003
         if self.button_states.get(BUTTON_TYPES["CANCEL"]):
             self.button_states.clear()
+            self._leds_restore()
             self.minimise()
             return
         if self.button_states.get(BUTTON_TYPES["LEFT"]):
@@ -575,7 +576,16 @@ class TildensteinApp(app.App):
         except Exception:
             pass
 
+    # --- Lifecycle ---
+
+    def background(self):
+        self._leds_restore()
+
     # --- LEDs ---
+
+    def _leds_restore(self):
+        if _HAS_LEDS:
+            eventbus.emit(PatternEnable())
 
     def _leds_white(self):
         pass
