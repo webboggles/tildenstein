@@ -30,10 +30,28 @@ class NetManager:
         self.rx_count = 0
         if _HAS_NET:
             try:
+                # Reset wifi to a known state: AP off, STA on, disconnected.
+                ap = network.WLAN(network.AP_IF)
+                try:
+                    ap.active(False)
+                except Exception:
+                    pass
                 sta = network.WLAN(network.STA_IF)
                 sta.active(True)
                 try:
                     sta.disconnect()
+                except Exception:
+                    pass
+                # Firmware 2.1.1 defaults the STA to modem-sleep, which turns
+                # the radio off periodically and drops inbound ESP-NOW packets
+                # so peers never join. Force the radio to stay awake.
+                try:
+                    sta.config(pm=sta.PM_NONE)
+                except Exception:
+                    pass
+                # Stop auto-reconnect/channel scanning pulling us off channel.
+                try:
+                    sta.config(reconnects=0)
                 except Exception:
                     pass
                 try:
