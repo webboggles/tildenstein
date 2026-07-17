@@ -100,7 +100,7 @@ class TildensteinApp(app.App):
         self.feed_t = 0
         self.water_acc = 0
 
-        self.net_mgr = net.NetManager()
+        self.net_mgr = net.NetManager(self)
         self.bcast_t = 0
         self._net_dmg = 0
         self._led_offset = 0
